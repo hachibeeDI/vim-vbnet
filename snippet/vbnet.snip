@@ -1,0 +1,189 @@
+
+snippet '''
+abbr    '''<summary>
+    ''' <summary>${1:#:summary}</summary>
+    ''' <remarks>${2:#:remarks} </remarks>
+    ''' <history>${3:Created at: `strftime("%Y-%b-%d")`}</history>${4:#:TARGET}
+
+snippet     'returns
+abbr        '''<returns></returns>
+options     head
+    ''' <returns>${1:#:description}</returns>
+
+snippet     'param
+abbr        '''<param name=""></param>
+options     head
+    '''<param name="${1:#:name}">${2:#:description}</param>${3:#:TARGET}
+
+
+snippet     namespace
+abbr        NameSpace : : End NameSpace
+alias       name namesp nmsp
+options     head
+    NameSpace ${1:#:name}
+        ${2:#:TARGET}
+    End NameSpace
+
+
+snippet     class
+abbr        Public Class
+alias       cls
+options     head
+    Public Class ${1:#:name}
+        Public Sub New(${2:#:var})
+            ${3:#:targ}
+        End Sub
+
+        ${4:#:TARGET}
+    End Class
+
+snippet     extmethod
+abbr        Extension Method
+options     head
+    Imports System.Runtime.CompilerServices
+
+    Module ${1:#:name}
+
+      <Extension()> _
+      Public Function ${2:#:name}(this As ${3:#:type}) As ${4:#:return_type}
+        ${5:#:TARGET}
+      End Sub
+    End Module
+
+snippet     prisub
+abbr        Private Sub name()
+options     head
+    Private Sub ${1:#:name}(${2:#:var})
+        ${2:#:TARGET}
+    End Sub
+
+snippet     pubsub
+abbr        Public Sub name()
+options     head
+    Public Sub ${1:#:name}(${2:#:var})
+        ${3:#:TARGET}
+    End Sub
+
+snippet     prifunc
+abbr        Private Function name() As Hoge
+options     head
+    Private Function ${1:#:name}(${2:#:var}) As ${3:#:type}
+        ${4:#:TARGET}
+    End Function
+
+snippet     pubfunc
+abbr        Private Function name() As Hoge
+options     head
+    Public Function ${1:#:name}(${2:#:var}) As ${3:#:type}
+        ${4:#:TARGET}
+    End Function
+
+snippet     dim
+abbr        Dim x As Hoge
+options     head
+    Dim ${1:#:name} As ${2:#:type}
+
+snippet     dimn
+abbr        Dim x As New Hoge
+options     head
+    Dim ${1:#:name} As New ${2:#:type}
+
+snippet     (of
+abbr        Type(Of hoge)
+    ${1:#:type}(Of ${2:#:type})
+
+snippet     if
+abbr        If expr Then
+options     head
+    If ${1:#:expr} Then
+        ${2:#:TARGET}
+    End If
+
+snippet     ifelse
+abbr        If expr Then
+options     head
+    If ${1:#:expr} Then
+        ${2:#:TARGET}
+    Else
+        ${2:#:TARGET}
+    End If
+
+snippet     elif
+abbr        ElseIf expr Then
+options     head
+    ElseIf ${1:#:expr} Then
+        ${2:#:TARGET}
+    End If
+
+snippet     lams
+abbr        Sub(var) expr
+options     word
+    Sub(${1:#:vars}) ${2:#:TARGET}
+
+snippet     lams+
+abbr        Sub(var) : : End Sub
+options     word
+    Sub(${1:#:vars})
+        ${2:#:TARGET}
+    End Sub
+
+snippet     lamf
+abbr        Function(var) expr
+options     word
+    Function(${1:#:vars}) ${2:#:TARGET}
+
+snippet     lamf+
+abbr        Function(var) : : End Function
+options     word
+    Function(${1:#:vars})
+        ${2:#:TARGET}
+    End Function
+
+snippet     sel
+abbr        .Select(Function(var) expr
+     _
+    .Select(Function(${1:#:var}) ${2:#:expr})${3:#:TARGET}
+
+snippet     whe
+abbr        .Where(Function(var) expr
+     _
+    .Where(Function(${1:#:var}) ${2:#:expr})${3:#:TARGET}
+
+
+snippet     for
+abbr        .Foreach(Sub(var) expr
+     _
+    .Foreach(Sub(${1:#:var}) ${2:#:expr} )
+    ${3:#:TARGET}
+
+
+snippet     sel+
+abbr        .select(Function(var) expr
+     _
+    .Select(Function(${1:#:var})
+                ${2:#:TARGET}
+            End Function)
+
+snippet     whe+
+abbr        .Where(Function(var) expr
+     _
+    .Where(Function(${1:#:var})
+                ${2:#:TARGET}
+            End Function)
+
+snippet     for+
+abbr        .Foreach(Sub(var) expr
+     _
+    .Foreach(Sub(${1:#:var})
+                ${2:#:TARGET}
+            End Sub)
+
+
+snippet     with
+abbr        anonymous type or object initializer
+options     head
+    With
+        {
+            .${1:#:member} = ${2:#:var}${3:#:TARGET}
+        }
+
