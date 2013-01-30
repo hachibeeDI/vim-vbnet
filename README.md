@@ -11,3 +11,7 @@ VimデフォルトのVB用の設定を上書きするので注意してくださ
 試行錯誤中&僕好みな感じで作っているので、例えばスニペットはVisualStudioのものと互換性とか全然ありません。
 
 
+![coloscheme is solarized](https://raw.github.com/hachibeeDI/vim-vbnet/master/ScreenShot.png)
+
+
+
