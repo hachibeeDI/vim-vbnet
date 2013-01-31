@@ -2,12 +2,13 @@ IEnumerable
 IEnumarator
 List
 Dictionary
+Tuple
+Lazy
 
 Any
 All
 Min
 Max
-Sum
 Aggregate
 SelectMany
 Distinct
@@ -19,6 +20,15 @@ ToList
 ToDictionary
 ToArray
 ToLookup
+ConCat
+Find
+FindIndex
+GroupBy
+Sort
+TrueForAll
+AsEnumerable
+AsParallel
+AsReadOnly
 
 System
 System.Linq
