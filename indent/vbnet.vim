@@ -8,7 +8,6 @@ if exists("b:did_indent")
 endif
 let b:did_indent = 1
 
-setlocal nolisp
 setlocal autoindent
 setlocal expandtab
 setlocal tabstop<
@@ -16,8 +15,6 @@ setlocal softtabstop=4
 setlocal shiftwidth=4
 
 setlocal indentexpr=VbNetGetIndent(v:lnum)
-"setlocal indentkeys&
-"setlocal indentkeys+=!^F,o,O,=~?catch,=~?else,=~?elseif,=~?end,=~?next,<:>
 setlocal indentkeys+=!^F,o,O,=~?catch,=~?else,=~?elseif,=~?end,=~?next,<:>
 
 " Only define the function once.
@@ -82,52 +79,6 @@ function VbNetGetIndent(lnum)
       break
     endif
   endwhile
-
-"  " Search backwards for the previous non-empty line.
-"  let plnum = prevnonblank(v:lnum - 1)
-"  if pp_line == 0
-"    " This is the first non-empty line, use zero indent.
-"    return 0
-"  endif
-
-"  if previous_line =~? '>\s\+_$'
-"    let ind = ind - &sw
-"  endif
-
-"  " Add
-"  if previous_line =~? '^\s*\(\(Public\|Protected\|Protected Friend\|Private\|Friend\|Overrides\|Overridable\|Overloads\|NotOverridable\|MustOverride\|Shadows\|Shared\|ReadOnly\|WriteOnly\)\s\+\)*\<\(Function\|Sub\|Class\|Module\|Namespace\|Property\|Get\|Set\|Custom Event\|Enum\)\>'
-"      \ || previous_line =~? '^\s*\<\(AddHandler\|RemoveHandler\|RaiseEvent\)\s*('
-"    let ind = ind + &sw
-"    if pp_line =~? '>\s\+_$'
-"      let ind = ind + &sw
-"    endif
-"  elseif previous_line =~? '^\s*<[A-Z]' && previous_line =~? '>\s\+\(\(Public\|Protected\|Protected Friend\|Private\|Friend\|Overrides\|Overridable\|Overloads\|NotOverridable\|MustOverride\|ReadOnly\|WriteOnly\|Shadows\|Shared\)\s\+\)*\<\(Function\|Sub\|Class\|Module\|Namespace\|Property\|Get\|Set\|Enum\)\>'
-"    let ind = ind + &sw
-"  elseif previous_line =~? '^\s*\<\(Select\|Case\|Default\|Else\|ElseIf\|Do\|For\|While\|With\|SyncLock\|Using\|Try\|Catch\|Finally\)\>'
-"    let ind = ind + &sw
-"  elseif previous_line =~? '\<Then$'
-"    let ind = ind + &sw
-"  endif
-
-"  " Subtract
-"  if this_line =~? '^\s*\<End\>\s\+\<Select\>'
-"    if previous_line !~? '^\s*\<Select\>'
-"      let ind = ind - 2 * &sw
-"    else
-"      " this case is for an empty 'select' -- 'end select'
-"      " (w/o any case statements) like:
-"      "
-"      " select case readwrite
-"      " end select
-"      let ind = ind - &sw
-"    endif
-"  elseif this_line =~? '^\s*\<\(Catch\|End\|Else\|ElseIf\|Until\|Loop\|Next\)\>'
-"    let ind = ind - &sw
-"  elseif this_line =~? '^\s*\<\(Case\)\>'
-"    if previous_line !~? '^\s*\<Select\>'
-"      let ind = ind - &sw
-"    endif
-"  endif
 
 return ind
 endfunction
