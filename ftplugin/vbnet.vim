@@ -1,10 +1,11 @@
-if exists('b:did_ftplugin_vbnet')
-    finish
+
+if (exists("b:did_ftplugin"))
+  finish
 endif
-let b:did_ftplugin_vbnet = 1
+let b:did_ftplugin = 1
+
 let s:keepcpo = &cpo
 set cpo&vim
-
 
 setlocal cinkeys-=0#
 setlocal indentkeys-=0#
