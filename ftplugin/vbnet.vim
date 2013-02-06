@@ -1,4 +1,3 @@
-
 if (exists("b:did_ftplugin"))
   finish
 endif
@@ -13,7 +12,7 @@ setlocal suffixesadd=.vb
 setlocal comments-=:%
 setlocal commentstring='%s
 
-fun! <SID>VbSearch(pattern, flags)
+function! s:VbSearch(pattern, flags)
     let cnt = v:count1
     while cnt > 0
       call search(a:pattern, a:flags)
@@ -21,8 +20,8 @@ fun! <SID>VbSearch(pattern, flags)
     endwhile
 endfun
 
-nnoremap <buffer> <silent> [[ :call <SID>VbSearch('^\s*\(\(private\|public\)\s\+\)\=\(function\\|sub\)', 'bW')<cr>
-nnoremap <buffer> <silent> ]] :call <SID>VbSearch('^\s*\(\(private\|public\)\s\+\)\=\(function\\|sub\)', 'W')<cr>
+nnoremap <buffer> <silent> [[ :<C-u>call <SID>VbSearch('^\s*\<\(private\<Bar>public\<Bar>friend\<Bar>protected\)\>\s\+\(function\<Bar>sub\)', 'bW')<cr>
+nnoremap <buffer> <silent> ]] :<C-u>call <SID>VbSearch('^\s*\<\(private\<Bar>public\<Bar>friend\<Bar>protected\)\>\s\+\(function\<Bar>sub\)', 'W')<cr>
 nnoremap <buffer> <silent> [] :call <SID>VbSearch('^\s*\<end\>\s\+\(function\\|sub\)', 'bW')<cr>
 nnoremap <buffer> <silent> ][ :call <SID>VbSearch('^\s*\<end\>\s\+\(function\\|sub\)', 'W')<cr>
 
