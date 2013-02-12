@@ -50,8 +50,7 @@ syn match vbnetFunction "\<End\> \(Function\|Sub\)"
 
 syn keyword vbnetScopeDecl Private Protected Public Friend Using
 
-syn keyword vbnetSpecial Call
-syn region vbnetGeneric start="(of" end=")" contains=vbnetTypes
+syn keyword vbnetSpecial Call Of
 syn keyword vbnetSugar AddHandler AddressOf Alias WithEvents RemoveHandler Handles From
 syn match vbnetDefAnonymousTypedef "=\s\<New\> \(With$\|With {$\)"
 
@@ -150,7 +149,6 @@ if version >= 508 || !exists("did_vbnet")
     hi link vbnetPreCondit PreCondit
     hi link vbnetSpecial Special
     hi link vbnetSugar vbnetSpecial
-    hi link vbnetGeneric vbnetSpecial
     hi link vbnetDefAnonymousTypedef vbnetSpecial
     hi link vbnetProperty vbnetSugar
     hi link vbnetPropertyEnd vbnetSugar
