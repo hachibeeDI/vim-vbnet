@@ -48,7 +48,7 @@ syn keyword vbnetModifier Inherits Implements MustInherit MustOverride Const Ove
 syn keyword vbnetFunction Sub Function Operator
 syn match vbnetFunction "\<End\> \(Function\|Sub\)"
 
-syn keyword vbnetScopeDecl Private Protected Public Friend Using
+syn keyword vbnetScopeDecl Private Protected Public Friend
 
 syn keyword vbnetSpecial Call Of
 syn keyword vbnetSugar AddHandler AddressOf Alias WithEvents RemoveHandler Handles From
@@ -60,6 +60,8 @@ syn match vbnetPropertyEnd "^\s*End \(Get\|Set\|Property\)$"
 syn keyword vbnetKeyword ByVal GetType ParamArray On Option Optional Exit Imports
 syn keyword vbnetException Try Catch Finally Throw
 syn match vbnetException "\<End\> Try$"
+syn match vbnetUsing Using
+syn match vbnetUsing "\<End\> Using$"
 syn keyword vbnetOperator New And Or AndAlso OrElse Is Not IsNot Like Mod
 syn keyword vbnetBoolean True False
 syn match vbnetDelimiter "\(,\|\.\|:\|{\|}\|\s_$\)"
@@ -130,6 +132,7 @@ if version >= 508 || !exists("did_vbnet")
     hi link vbnetConditionalEnd Conditional
     hi link vbnetKeyword Keyword
     hi link vbnetException Exception
+    hi link vbnetUsing Exception
     hi link vbnetAttribute PreProc
     hi link vbnetStorage StorageClass
     hi link vbnetModifier vbnetStorage
