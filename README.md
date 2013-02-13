@@ -21,13 +21,15 @@ VimデフォルトのVB用の設定を上書きするので注意してくださ
 You should add filetype.vim in your USER_RUNTIME directory. If you want to replace default filetype detection with *.vb.
 
  - case Windows
+
     ~/vimfiles/filetype.vim
 
  - case Unix
+
     ~/.vim/filetype.vim
 
 
-```VimScript
+```VimL
 
 if exists("did_load_filetypes")
   finish
