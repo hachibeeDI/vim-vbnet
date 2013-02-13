@@ -15,3 +15,25 @@ VimデフォルトのVB用の設定を上書きするので注意してくださ
 
 
 
+
+## settings ##
+
+You should add filetype.vim in your USER_RUNTIME directory. If you want to replace default filetype detection with *.vb.
+
+ - case Windows
+    ~/vimfiles/filetype.vim
+
+ - case Unix
+    ~/.vim/filetype.vim
+
+
+```VimScript
+
+if exists("did_load_filetypes")
+  finish
+endif
+augroup filetypedetect
+  au! BufRead,BufNewFile *.vb setfiletype vbnet
+augroup END
+
+```
