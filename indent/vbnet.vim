@@ -31,7 +31,7 @@ function VbNetGetIndent(lnum)
   let access_modifier = '\<\(Public\|Protected\|Private\|Friend\)\>'
 
   let previous_line = getline(a:lnum - 1)
-  if previous_line =~ '\s_$' || previous_line =~ '\s,' || previous_line =~ '^\s*\.'
+  if previous_line =~ '\s_$' || previous_line =~ ',$' || previous_line =~ '^\s*\.'
     return ind
   elseif previous_line =~ '{$' || previous_line =~ '($' || previous_line =~ '=$'
     return ind + &l:shiftwidth
