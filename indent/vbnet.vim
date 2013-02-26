@@ -39,7 +39,7 @@ function VbNetGetIndent(lnum)
     return ind + &l:shiftwidth
   elseif previous_line =~? '^\s*'.access_modifier.'\s\(\Class\|Module\|Enum\|Interface\|Operator\)'
     return ind + &l:shiftwidth
-  elseif previous_line =~? '\s\(Overrides\|Overridable\|Overloads\|NotOverridable\|MustOverride\|Shadows\|Shared\|ReadOnly\|WriteOnly\)\s'
+  elseif previous_line =~? '\<\(Overrides\|Overridable\|Overloads\|NotOverridable\|MustOverride\|Shadows\|Shared\|ReadOnly\|WriteOnly\)\>'
     return ind + &l:shiftwidth
   endif
 
