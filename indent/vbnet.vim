@@ -15,7 +15,7 @@ setlocal softtabstop=4
 setlocal shiftwidth=4
 
 setlocal indentexpr=VbNetGetIndent(v:lnum)
-setlocal indentkeys+=!^F,o,O,=~?catch,=~?else,=~?elseif,=~?end,=~?next,<:>
+setlocal indentkeys=!^F,o,O,0=~?catch,0=~?else,0=~?elseif,0=~?end,0=~?next,0=~?end,<:>
 
 " Only define the function once.
 if exists("*VbNetGetIndent")
@@ -61,11 +61,6 @@ function VbNetGetIndent(lnum)
   let LABELS_OR_PREPROC = '^\s*\(\<\k\+\>:\s*$\|#.*\)'
   if this_line =~? LABELS_OR_PREPROC
     return 0
-  endif
-
-  if this_line =~? '^\s*#'
-    return 0
-
   endif
 
   " Find a non-blank line above the current line.
