@@ -55,7 +55,7 @@ syn keyword vbnetSugar AddHandler AddressOf Alias WithEvents RemoveHandler Handl
 syn match vbnetDefAnonymousTypedef "=\s\<New\> \(With$\|With {$\)"
 
 syn keyword vbnetProperty Property Get Set
-syn match vbnetPropertyEnd "^\s*End \(Get\|Set\|Property\)$"
+syn match vbnetTypeDef "^\s*End \(Get\|Set\|Property\)$"
 
 syn keyword vbnetKeyword ByVal GetType ParamArray On Option Optional Exit Imports
 syn keyword vbnetException Try Catch Finally Throw
