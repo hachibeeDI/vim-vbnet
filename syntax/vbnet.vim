@@ -55,12 +55,12 @@ syn keyword vbnetSugar AddHandler AddressOf Alias WithEvents RemoveHandler Handl
 syn match vbnetDefAnonymousTypedef "=\s\<New\> \(With$\|With {$\)"
 
 syn keyword vbnetProperty Property Get Set
-syn match vbnetPropertyEnd "^\s*End \(Get\|Set\|Property\)$"
+syn match vbnetTypeDef "^\s*End \(Get\|Set\|Property\)$"
 
 syn keyword vbnetKeyword ByVal GetType ParamArray On Option Optional Exit Imports
 syn keyword vbnetException Try Catch Finally Throw
 syn match vbnetException "\<End\> Try$"
-syn match vbnetUsing Using
+syn keyword vbnetUsing Using
 syn match vbnetUsing "\<End\> Using$"
 syn keyword vbnetOperator New And Or AndAlso OrElse Is Not IsNot Like Mod
 syn keyword vbnetBoolean True False
@@ -147,7 +147,7 @@ if version >= 508 || !exists("did_vbnet")
     hi link vbnetchar vbnetString
     hi link vbnetComment Comment
     hi link vbnetTodo Todo
-    hi link vbnetFunction Function
+    hi link vbnetFunction TypeDef
     hi link vbnetMethods PreProc
     hi link vbnetPreCondit PreCondit
     hi link vbnetSpecial Special
