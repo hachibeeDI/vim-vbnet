@@ -147,7 +147,7 @@ if version >= 508 || !exists("did_vbnet")
     hi link vbnetchar vbnetString
     hi link vbnetComment Comment
     hi link vbnetTodo Todo
-    hi link vbnetFunction Function
+    hi link vbnetFunction TypeDef
     hi link vbnetMethods PreProc
     hi link vbnetPreCondit PreCondit
     hi link vbnetSpecial Special
