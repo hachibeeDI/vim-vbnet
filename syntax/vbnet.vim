@@ -60,7 +60,7 @@ syn match vbnetPropertyEnd "^\s*End \(Get\|Set\|Property\)$"
 syn keyword vbnetKeyword ByVal GetType ParamArray On Option Optional Exit Imports
 syn keyword vbnetException Try Catch Finally Throw
 syn match vbnetException "\<End\> Try$"
-syn match vbnetUsing Using
+syn keyword vbnetUsing Using
 syn match vbnetUsing "\<End\> Using$"
 syn keyword vbnetOperator New And Or AndAlso OrElse Is Not IsNot Like Mod
 syn keyword vbnetBoolean True False
