@@ -1,8 +1,8 @@
 # Vim VB.NET #
 
-This vim bundle adds syntax, indenting and some snippets.
+This repository includes VB.Net syntax, indent and some snippets.
 
-This bundle will override vim's default filetype VB.
+Be careful this bundle will override your vim's default filetype for `VB`.
 
 
 VimにVB.NET用のシンタックスとかインデントを追加するやつです。スニペットもオレオレなのが入ってます。
@@ -10,13 +10,15 @@ VimデフォルトのVB用の設定を上書きするので注意してくださ
 
 試行錯誤中&僕好みな感じで作っているので、例えばスニペットはVisualStudioのものと互換性とか全然ありません。
 
-
 ![coloscheme is solarized](https://raw.github.com/hachibeeDI/vim-vbnet/master/ScreenShot.png)
 
 
+## Warning ##
+
+I'm no longer using this repository. However if you have an idea to improve this you can feel free to send PR. :+1:
 
 
-## settings ##
+## How to install ##
 
 You should add filetype.vim in your USER_RUNTIME directory. If you want to replace default filetype detection with *.vb.
 
