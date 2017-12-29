@@ -1,7 +1,7 @@
 " Vim indent file
 " Language   : VisualBasic.NET
-" Maintainers: OGURA Daiki
-" Last Change: 2013-01-25
+" Maintainers: OGURA Daiki, MATSUSHIMA Kazuhiro
+" Last Change: 2017-12-27
 
 if exists("b:did_indent")
   finish
@@ -45,15 +45,14 @@ function VbNetGetIndent(lnum)
 
   if previous_line =~? 'Then$'
     return ind + &l:shiftwidth
-  elseif previous_line =~? '^\s*\<\(Select Case\|Else\|ElseIf\|For\|While\|Using\|Try\|Catch\|Finally\)\>'
+  elseif previous_line =~? '^\s*\<\(Select Case\|Else\|ElseIf\|For\|While\|Using\|With\|Try\|Catch\|Finally\)\>'
     return ind + &l:shiftwidth
   elseif previous_line =~? '^\s\+}$'
     return &l:shiftwidth + &l:shiftwidth
   endif
 
-  if previous_line =~? 'End \(If\|Case\|Try\|Sub\|Function\|Class\|Operator\)$'
+  if previous_line =~? 'End \(If\|Case\|While\|Using\|With\|Try\|Sub\|Function\|Class\|Operator\)$'
     return ind
-
   endif
 
   " labels and preprocessor get zero indent immediately
