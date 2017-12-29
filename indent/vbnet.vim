@@ -51,9 +51,7 @@ function VbNetGetIndent(lnum)
     return &l:shiftwidth + &l:shiftwidth
   endif
 
-  if previous_line =~? 'End \(If\|Case\|Try\|Sub\|Function\|Class\|Operator\)$'
-    return ind
-  elseif previous_line =~? 'End \(Select\|While\|Using\|With\|Try\)$'
+  if previous_line =~? 'End \(If\|Case\|While\|Using\|With\|Try\|Sub\|Function\|Class\|Operator\)$'
     return ind
   endif
 
